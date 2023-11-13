@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lab 6</title>
+</head>
+<body>
+    <header>
+        <!-- Your header content (image, page title, etc.) goes here -->
+        <h1>Lab 6: Do Something! {You choose, I guess}</h1>
+    </header>
+    <aside class="menu">
+        <!-- Your menu/sidebar content goes here -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="content">
+        <p class="game-instructions">
+          Welcome to the Guessing Game!  Please enter a number into the box
+          below, but don't tell the computer what your number is.  The computer
+          will then guess your number.
+        </p>
+  
+  
+        <input id="target-box" type="number" placeholder="Enter any number 1-100" min="1" max="100">
+        
+        <button id="game-status-btn">Start!</button>
+  
+        <div id="game-controls">
+          <p>
+            Current Guess
+          </p>
+  
+          <div id="guess-display">
+          </div>
+  
+          <button id="too-low-btn" class="control-btn">Too Low!</button>
+          <button id="correct-btn" class="control-btn">Correct!</button>
+          <button id="too-high-btn" class="control-btn">Too High!</button>
+  
+          <div id="end-msg-display">
+          </div>
+  
+          <div id="guess-history">
+          </div>
+      </main>
+    <aside class="advertisement">
+        <!-- Your advertisement image linked to Amazon goes here -->
+        <h2>Ads</h2>
+        <a href="https://www.amazon.com/" target="_blank">
+            <img src="ads.jpeg" alt="Amazon Ad">
+        </a>
+    </aside>
+    <footer>
+        <!-- Addendum content -->
+        <p>
+          **Game Development Addendum:**
+          <br>
+          This JavaScript code powers a dynamic guessing game where the computer employs a binary search algorithm to guess a user-entered number. Key features include:
+          <br>
+          ...
+          <br>
+          **Conclusion:**
+          <br>
+          This code combines algorithmic logic with interactive elements, resulting in an engaging guessing game. The binary search algorithm efficiently narrows down possibilities, providing an entertaining and challenging user experience.
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
