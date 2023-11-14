@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Guessing Game </title>
+
+    <style>
+     body {
+       font-size: 1.2em;
+     }
+
+     #guess-display {
+       margin-bottom: 1em;
+     }
+
+     #end-msg-display {
+       margin-top: 1em;
+     }
+
+     #game-controls {
+       display: none;
+     }
+
+     .js-end-game-pulse {
+       animation-duration: 1s;
+       animation-name: negative-pulse;
+       animation-direction: alternate;
+       animation-iteration-count: 2;
+     }
+
+     @keyframes negative-pulse {
+       from {
+         color: black;
+         background-color: white;
+       }
+
+       to {
+         color: white;
+         background-color: black;
+       }
+     }
+    </style>
+
+    <script type="module" src="guessing_game.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <p class="game-instructions">
+        Welcome to the Guessing Game!  Please enter a number into the box
+        below, but don't tell the computer what your number is.  The computer
+        will then guess your number.
+      </p>
+
+
+      <input id="target-box" type="number" min="1" max="100">
+
+      <button id="game-status-btn">Start!</button>
+
+      <div id="game-controls">
+        <p>
+          Current Guess
+        </p>
+
+        <div id="guess-display">
+        </div>
+
+        <button id="too-low-btn" class="control-btn">Too Low!</button>
+        <button id="correct-btn" class="control-btn">Correct!</button>
+        <button id="too-high-btn" class="control-btn">Too High!</button>
+
+        <div id="end-msg-display">
+        </div>
+
+        <div id="guess-history">
+        </div>
+    </main>
+  </body>
