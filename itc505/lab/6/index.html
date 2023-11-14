@@ -1,127 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-   
-
-    <title>Do Something!</title>
-    
-    <link rel="stylesheet" href="/stylesheets/normalize.css">
-    <link rel="stylesheet" href="/stylesheets/vars_and_utilities.css">
-    <link rel="stylesheet" href="/stylesheets/general_theme.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
-
-  </head>
-  <body>
-
-    <main>
-      <article class="assignment">
-        <header>
-          <h1 class="title">
-            Do Something!
-          </h1>
-        </header>
-      
-        <hr>
-      
-        <section id="overview">
-          <h2>Overview</h2>
-      
-          <p>
-            This is a relatively simple assignment, but it could take a while if you
-            end up debugging a bit.  There are two parts:
-          </p>
-      
-          <ol>
-            <li>
-              Create a page with a
-              <a href="https://en.wikipedia.org/wiki/Holy_grail_(web_design)">
-                Holy Grail Layout
-              </a> using what you have learned from the frogs and the carrots
-            </li>
-      
-            <li>
-              Write some JavaScript code to solve a problem and put the interface in
-              the content section of your HG layout
-            </li>
-      
-            <p>
-              The second part is purposefully vague/open-ended; I don't care what
-              problem you solve.  You can just bubble-sort a fixed array of integers
-              if you like, the point is to just get your feet wet writing some JS
-              code and hooking it up to a webpage.  Your code <strong>should respond
-              to at least one event</strong> though.
-            </p>
-        </section>
-      
-        <section>
-          <h2>Instructions</h2>
-      
-          <p>
-            Make a simple HTML page available on your website at the path
-            <a>http://&lt;your domain&gt;/itc505/Lab/6</a>.  The page should have
-            the Holy Grail style layout mentioned above implemented primarily with
-            CSS grid.  Requirements for its five main parts are given below:
-          </p>
-      
-          <dl>
-            <dt>Header</dt>
-            <dd>
-              can contain an image, a page title, or whatever you think makes
-              sense to display at the top of the page; it does not have to be
-              thematically connected to the rest of your site
-            </dd>
-      
-            <dt>Menu Side-Bar</dt>
-            <dd>
-              should look like it contains links to other parts of your website;
-              it doesn't matter if they are clickable or actually take you to a
-              webpage, just make this area look like site navigational controls
-            </dd>
-      
-            <dt>Main Content Area</dt>
-            <dd>
-              should contain your JavaScript thingy
-            </dd>
-      
-            <dt>Advertisement</dt>
-            <dd>
-              should be an image that takes you to an Amazon page for the shown
-              product; <strong>the whole image should be clickable</strong> and the
-              product should be SFW
-            </dd>
-      
-            <dt>Footer</dt>
-            <dd>
-              Is actually where your addendum should go; your addendum should
-              describe the problem you solved in your JavaScript, a brief overview of
-              how you solved it, and any difficulties you encountered along the way
-              and the solutions to those difficulties
-            </dd>
-          </dl>
-      
-          <p>
-            As mentioned before, your JavaScript can do anything you want as long as
-            it:
-          </p>
-      
-          <ul>
-            <li>
-              Is interactive in some way, e.g. buttons to click, text boxes to enter,
-              etc.
-            </li>
-            <li>
-              The JavaScript code itself is located in a separate file and linked in
-              via a &lt;script&gt; tag
-            </li>
-          </ul>
-        </section>
-      
-        <p>
-          If you want to reference the guessing game code from class,
-          <a href="doSomething.html">I put the HTML here</a>, and you should be able to
-          find the JavaScript code from there via right-click and "View page source".
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lab 6</title>
+</head>
+<body>
+    <header>
+        <!-- Your header content (image, page title, etc.) goes here -->
+        <h1>Lab 6: Do Something! {You choose, I guess}</h1>
+    </header>
+    <aside class="menu">
+        <!-- Your menu/sidebar content goes here -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="content">
+        <p class="game-instructions">
+          Welcome to the Guessing Game!  Please enter a number into the box
+          below, but don't tell the computer what your number is.  The computer
+          will then guess your number.
         </p>
-      </article>
-    </main>
-  </body>
+  
+  
+        <input id="target-box" type="number" placeholder="Enter any number 1-100" min="1" max="100">
+        
+        <button id="game-status-btn">Start!</button>
+  
+        <div id="game-controls">
+          <p>
+            Current Guess
+          </p>
+  
+          <div id="guess-display">
+          </div>
+  
+          <button id="too-low-btn" class="control-btn">Too Low!</button>
+          <button id="correct-btn" class="control-btn">Correct!</button>
+          <button id="too-high-btn" class="control-btn">Too High!</button>
+  
+          <div id="end-msg-display">
+          </div>
+  
+          <div id="guess-history">
+          </div>
+      </main>
+    <aside class="advertisement">
+        <!-- Your advertisement image linked to Amazon goes here -->
+        <h2>Ads</h2>
+        <a href="https://www.amazon.com/" target="_blank">
+            <img src="ads.jpeg" alt="Amazon Ad">
+        </a>
+    </aside>
+    <footer>
+        <!-- Addendum content -->
+        <p>
+          **Game Development Addendum:**
+          <br>
+          This JavaScript code powers a dynamic guessing game where the computer employs a binary search algorithm to guess a user-entered number. Key features include:
+          <br>
+          ...
+          <br>
+          **Conclusion:**
+          <br>
+          This code combines algorithmic logic with interactive elements, resulting in an engaging guessing game. The binary search algorithm efficiently narrows down possibilities, providing an entertaining and challenging user experience.
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
