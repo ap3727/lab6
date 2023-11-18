@@ -1,144 +1,181 @@
 body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: auto 1fr auto;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+header, aside, main, footer {
+  padding: 20px;
+}
+
+header, footer {
+  grid-column: span 3;
+  background-color: #333;
+  color: #fff;
+}
+
+.menu, .content, .advertisement {
+  min-height: 200px;
+}
+
+.menu, .advertisement {
+  grid-row: span 2;
+}
+
+.menu {
+  background-color: #eee;
+}
+
+.menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu nav ul li {
+  margin-bottom: 10px;
+}
+
+.menu nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+}
+
+.menu nav ul li a:hover {
+  color: #0048ff;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-instructions {
+  font-size: 1.5em;
+  color: #333;
+}
+
+#target-box {
+  margin: 10px 0;
+  padding: 8px;
+  width: 300px;
+  font-size: 1em;
+}
+
+#game-status-btn {
+  padding: 10px;
+  font-size: 1em;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#game-status-btn:hover {
+  background-color: #45a049;
+}
+
+#guess-display {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.control-btn {
+  padding: 10px;
+  font-size: 1em;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#too-low-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+#too-low-btn:hover {
+  background-color: #d32f2f;
+}
+
+#correct-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+#correct-btn:hover {
+  background-color: #45a049;
+}
+
+#too-high-btn {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+#too-high-btn:hover {
+  background-color: #1565c0;
+}
+
+#advertisement {
+  text-align: center;
+  padding: 20px;
+}
+
+#advertisement img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-top: 2px solid #fff;
+  position: sticky;
+  bottom: 0;
+}
+
+.balls-container {
+  position: absolute;
+  top: 350px;
+  left: 0;
+  width: 100vw;
+  height: 200vh;
+}
+
+.ball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  animation: bounce linear infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  
-  header, aside, main, footer {
-    padding: 20px;
+  40% {
+    transform: translateY(-30px);
   }
-  
-  header, footer {
-    grid-column: span 3;
-    background-color: #333;
-    color: #fff;
+  60% {
+    transform: translateY(-15px);
   }
-  
-  .menu, .content, .advertisement {
-    min-height: 200px;
-  }
-  
-  .menu, .advertisement {
-    grid-row: span 2;
-  }
-  
-  .menu {
-    background-color: #eee;
-  }
-  
-  .menu nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu nav ul li {
-    margin-bottom: 10px;
-  }
-  
-  .menu nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 20px;
-  }
-  
-  .menu nav ul li a:hover {
-    color: #0048ff;
-  }
-  
-  .content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .game-instructions {
-    font-size: 1.5em;
-    color: #333;
-  }
-  
-  #target-box {
-    margin: 10px 0;
-    padding: 8px;
-    width: 300px;
-    font-size: 1em;
-  }
-  
-  #game-status-btn {
-    padding: 10px;
-    font-size: 1em;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #game-status-btn:hover {
-    background-color: #45a049;
-  }
-  
-  #guess-display {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 1em;
-  }
-  
-  .control-btn {
-    padding: 10px;
-    font-size: 1em;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  #too-low-btn {
-    background-color: #f44336;
-    color: #fff;
-  }
-  
-  #too-low-btn:hover {
-    background-color: #d32f2f;
-  }
-  
-  #correct-btn {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  #correct-btn:hover {
-    background-color: #45a049;
-  }
-  
-  #too-high-btn {
-    background-color: #2196f3;
-    color: #fff;
-  }
-  
-  #too-high-btn:hover {
-    background-color: #1565c0;
-  }
-  
-  #advertisement {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  #advertisement img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: left;
-    padding: 10px;
-    border-top: 2px solid #fff;
-  }
-  
+}
